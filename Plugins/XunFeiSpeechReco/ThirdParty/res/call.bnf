@@ -1,0 +1,5 @@
+#BNF+IAT 1.0;
+!grammar nnnn;
+
+!start <callstart>;
+<callstart>:syj|10086!id(1)|test!id(2)|退出!id(3)|这是一个测试!id(4);
