@@ -191,9 +191,9 @@ void AXunfeiReco::RecoConfig()
 	int aud_src = 0;
 
 	FString BaseDir = IPluginManager::Get().FindPlugin("XunfeiSpeechReco")->GetBaseDir() + TEXT("/ThirdParty");
-	FString GRMPath = BaseDir + GRM_BUILD_PATH;
+	FString GRMPath = FPaths::ConvertRelativePathToFull(BaseDir) + GRM_BUILD_PATH;
 	GRMPath.ReplaceInline(TEXT("/"), TEXT("\\"), ESearchCase::CaseSensitive);
-	FString JetPath = TEXT("fo|") + BaseDir + ASR_RES_PATH;
+	FString JetPath = TEXT("fo|") + FPaths::ConvertRelativePathToFull(BaseDir) + ASR_RES_PATH;
 	JetPath.ReplaceInline(TEXT("/"), TEXT("\\"), ESearchCase::CaseSensitive);
 	
 	//离线语法识别参数设置
